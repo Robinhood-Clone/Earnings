@@ -24,3 +24,8 @@ coverage
 build/
 dist/
 
+
+# API Tokens
+config.js
+config-2.js
+

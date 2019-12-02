@@ -2,6 +2,8 @@
 
 > Project description
 
+This project composes the 'Analyst Ratings' module of an individual stock page of the Robinhood web application.
+
 ## Related Projects
 
   - https://github.com/teamName/repo
