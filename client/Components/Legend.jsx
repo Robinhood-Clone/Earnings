@@ -6,6 +6,7 @@ const OuterContainer = styled.div`
   flex-flow: row wrap;
   align-items: center;
   margin-top: 20px;
+  font-weight: 600;
 `;
 
 const EstimatedDot = styled.div`

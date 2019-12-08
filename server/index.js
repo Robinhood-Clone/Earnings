@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 4200;
 const bodyParser = require('body-parser');
-const Earnings = require('../database/Earning.js')
+const Earnings = require('../database/Earning.js');
 
 app.use('/', express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
