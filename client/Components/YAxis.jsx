@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import colors from './Colors.jsx';
 
 const Axis = styled.div`
-  color: rgb(202, 202, 203)
+  color: ${(props) => props.color};
+  font-family: "DINPro-Light";
+  font-weight: 700;
 `;
 
 const Label = styled.div`
@@ -13,7 +16,7 @@ const Label = styled.div`
 const YAxis = (props) => {
 
   return (
-    <Axis>
+    <Axis color={colors.darkGray}>
       {props.yAxisValues.map((value) => {
         return <Label key={value}>{`$${value}`}</Label>;
       })}

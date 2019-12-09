@@ -1,12 +1,15 @@
 import React from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
+import colors from './Colors.jsx';
 
 const XAxis = styled.div`
-  color: rgb(202, 202, 203);
+  color: ${(props) => props.color};
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
+  font-family: "DINPro-Light";
+  font-weight: 700;
 `;
 
 const QuarterContainer = styled.div`
@@ -15,27 +18,29 @@ const QuarterContainer = styled.div`
   flex-flow: column wrap;
   height: 205px;
   position: relative;
-`;
-
-const EstimatedDot = styled.div`
-  display: flex;
-  background: rgb(192, 240, 225);
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  position: absolute;
-  top: ${(props) => props.spaceAboveDotHeight}px;
+  font-family: "DINPro-Light";
 `;
 
 const ActualDot = styled.div`
   display: flex;
-  background: rgb(33, 206, 153);
+  background: ${(props) => props.color};
   width: 15px;
   height: 15px;
   border-radius: 50%;
   position: absolute;
   top: ${(props) => props.spaceAboveDotHeight}px;
 `;
+
+const EstimatedDot = styled.div`
+  display: flex;
+  background: ${(props) => props.color};
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: ${(props) => props.spaceAboveDotHeight}px;
+`;
+
 
 
 const QuarterDots = (props) => {
@@ -52,10 +57,10 @@ const QuarterDots = (props) => {
   return (
     <div>
       <QuarterContainer>
-        <EstimatedDot spaceAboveDotHeight={spaceAboveDotHeightEstimated} id={props.earningsInfo.estimatedPrice}></EstimatedDot>
-        <ActualDot spaceAboveDotHeight={spaceAboveDotHeightActual} id={props.earningsInfo.actualPrice}></ActualDot>
+        <EstimatedDot spaceAboveDotHeight={spaceAboveDotHeightEstimated} id={props.earningsInfo.estimatedPrice} color={colors.lightGreen}></EstimatedDot>
+        <ActualDot spaceAboveDotHeight={spaceAboveDotHeightActual} id={props.earningsInfo.actualPrice} color={colors.darkGreen}></ActualDot>
       </QuarterContainer>
-      <XAxis>{`Q${moment(props.earningsInfo.quarter).format('Q YYYY')}`}</XAxis>
+      <XAxis color={colors.darkGray}>{`Q${moment(props.earningsInfo.quarter).format('Q YYYY')}`}</XAxis>
     </div>
   );
 };

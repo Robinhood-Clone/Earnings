@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import colors from './Colors.jsx';
 
 const OuterContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   margin-top: 20px;
-  font-weight: 600;
+  font-weight: 400;
 `;
 
 const EstimatedDot = styled.div`
-  background: rgb(192, 240, 225);
+  background: ${(props) => props.color};
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -19,7 +20,7 @@ const EstimatedDot = styled.div`
 `;
 
 const ActualDot = styled.div`
-  background: rgb(33, 206, 153);
+  background: ${(props) => props.color};
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -32,9 +33,9 @@ const Legend = (props) => {
 
   return (
     <OuterContainer>
-      <EstimatedDot></EstimatedDot>
+      <EstimatedDot color={colors.lightGreen}></EstimatedDot>
       <div>Estimated <br></br> --- </div>
-      <ActualDot></ActualDot>
+      <ActualDot color={colors.darkGreen}></ActualDot>
       <div>Actual <br></br> Expected Jan 28, After Hours</div>
     </OuterContainer>
 

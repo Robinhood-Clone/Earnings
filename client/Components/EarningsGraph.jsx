@@ -3,43 +3,15 @@ import $ from 'jquery';
 import Header from './Header.jsx';
 import GraphBody from './GraphBody.jsx';
 import Legend from './Legend.jsx';
-import { createGlobalStyle } from 'styled-components';
+import GlobalStyle from './GlobalStyle.jsx';
 import styled from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    font-family: "DINPro", -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    line-height: 19px;
-    display: block;
-  }
-  @font-face {
-    font-family: "DINPro";
-    src: url("./DINPro.ttf") format('truetype');
-  }
-
-  h2 {
-    font-size: 26px;
-    font-weight: 900;
-    letter-spacing: -0.14px;
-    line-height: 30px;
-    display: block;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    border-bottom: 1px solid #f4f4f5;
-    padding-bottom: 16px;
-  }
-`;
 
 class EarningsGraph extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentStockTicker: 'ATAX',
+      currentStockTicker: 'ATAX', // ATAX for green
       earningsInfo: {
         _id: '5de97f22ce0ca0c23ef75849',
         ticker: 'ASX',
