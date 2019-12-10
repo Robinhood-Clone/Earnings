@@ -3,7 +3,9 @@ const app = express();
 const port = 4200;
 const bodyParser = require('body-parser');
 const Earnings = require('../database/Earning.js');
+const cors = require('cors');
 
+app.use(cors());
 app.use('/', express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
