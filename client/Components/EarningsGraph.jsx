@@ -90,7 +90,6 @@ class EarningsGraph extends React.Component {
             earningsInfo: data[0]
           }
         );
-        console.log(this.state)
       }
     });
   }
