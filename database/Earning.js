@@ -2,17 +2,19 @@ const mongoose = require('mongoose');
 const db = require('./index.js');
 
 const earningSchema = new mongoose.Schema({
+  seedID: Number,
   ticker: String,
   companyName: String,
-  data: {type:[{
+  data: {
+    type: [{
       quarter: Date,
       estimatedPrice: String,
       actualPrice: String
-    }]}
-},
-  {
-    timestamps: false,
+    }]
   }
+}, {
+  timestamps: false,
+}
 );
 
 const Earning = mongoose.model('Earning', earningSchema);

@@ -2,7 +2,7 @@
 
 > Project description
 
-This project composes the 'Analyst Ratings' module of an individual stock page of the Robinhood web application.
+This project composes the 'Earnings' module of an individual stock page of the Robinhood web application.
 
 ## Related Projects
 

@@ -8,4 +8,3 @@ const db = mongoose.connect(mongoUri,
   });
 
 mongoose.Promise = global.Promise;
-
