@@ -11,9 +11,10 @@ class EarningsGraph extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentStockTicker: 'ATAX', // ATAX for green
+      currentStockTicker: 'PSX',
       earningsInfo: {
         _id: '5de97f22ce0ca0c23ef75849',
+        seedID: 1,
         ticker: 'ASX',
         companyName: 'Advanced Semiconductor Engineering, Inc.',
         data: [{
@@ -73,19 +74,23 @@ class EarningsGraph extends React.Component {
   }
 
   componentDidMount() {
-    this.getEarningsInfo(this.state.currentStockTicker);
+    let x = location.pathname;
+    let stockTicker = x.substring(8, x.length - 1); // 8 is the length of string '/stocks/'
+    this.getEarningsInfo(stockTicker);
   }
 
   getEarningsInfo(stockTicker) {
     $.ajax({
       method: 'GET',
-      url: `http://localhost:4200/earnings/?ticker=${stockTicker}`,
+      url: `http://localhost:4200/api/earnings/?ticker=${stockTicker}`,
       success: (data) => {
         this.setState(
-          { earningsInfo: data[0] }
+          {
+            currentStockTicker: stockTicker,
+            earningsInfo: data[0]
+          }
         );
-        console.log('Get request successful: ', data);
-        console.log('State after get request: ', data);
+        console.log(this.state)
       }
     });
   }

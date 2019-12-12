@@ -44,8 +44,6 @@ const EstimatedDot = styled.div`
 
 
 const QuarterDots = (props) => {
-
-  console.log(props);
   let min = props.yAxisValues[3];
   let max = props.yAxisValues[0];
   let estimatedPrice = props.earningsInfo.estimatedPrice.substring(1) * 1; // convert e.g. from '$36.55' to 36.55
