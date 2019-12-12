@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "nodemon server/index.js",
-    "build": "webpack -d --watch",
+    "build": "webpack --mode=production --watch",
     "db-setup": "node database/seed.js",
     "test": "jest --watchAll --coverage"
   },
