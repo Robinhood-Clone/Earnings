@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  earnings:
+    build: .
+    depends_on:
+      - 'database'
+    ports:
+      - '4200:4200'
+  seed-database:
+    build: .
+    command: 'npm run db-setup'
+  database:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
