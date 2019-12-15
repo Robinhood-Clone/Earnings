@@ -74,15 +74,21 @@ class EarningsGraph extends React.Component {
   }
 
   componentDidMount() {
-    let x = location.pathname;
-    let stockTicker = x.substring(8, x.length - 1); // 8 is the length of string '/stocks/'
-    this.getEarningsInfo(stockTicker);
+    let path = location.pathname;
+    let stockSymbol = path.substring(0, path.length - 1);
+    if (stockSymbol === '' || stockSymbol === undefined) {
+      stockSymbol = 'MMM';
+    } else {
+      stockSymbol = path.substring(8, path.length - 1).toUpperCase();
+    }
+
+    this.getEarningsInfo(stockSymbol);
   }
 
   getEarningsInfo(stockTicker) {
     $.ajax({
       method: 'GET',
-      url: `http://localhost:4200/api/earnings/?ticker=${stockTicker}`,
+      url: `http://18.224.6.69/api/earnings/?ticker=${stockTicker}`,
       success: (data) => {
         this.setState(
           {
@@ -97,7 +103,7 @@ class EarningsGraph extends React.Component {
   render() {
     return (
       <div>
-        <GlobalStyle></GlobalStyle>
+        {/* <GlobalStyle></GlobalStyle> */}
         <Header></Header>
         <GraphBody earningsInfo={this.state.earningsInfo.data}></GraphBody>
         <Legend></Legend>
