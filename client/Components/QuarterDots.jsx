@@ -7,7 +7,7 @@ const XAxis = styled.div`
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  font-weight: 700;
+  font-weight: 500;
 `;
 
 const QuarterContainer = styled.div`

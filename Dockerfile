@@ -8,6 +8,6 @@ COPY . /src/app
 
 RUN yarn install
 
-EXPOSE 2000
+EXPOSE 4200
 
 CMD [ "npm", "start" ]

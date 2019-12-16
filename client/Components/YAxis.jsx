@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import colors from './Colors.jsx';
 
 const Axis = styled.div`
-  font-weight: 700;
+  font-weight: 500;
 `;
 
 const Label = styled.div`
