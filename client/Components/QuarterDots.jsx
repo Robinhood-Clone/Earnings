@@ -4,12 +4,10 @@ import styled from 'styled-components';
 import colors from './Colors.jsx';
 
 const XAxis = styled.div`
-  color: ${(props) => props.color};
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  font-family: "DINPro-Light";
-  font-weight: 700;
+  font-weight: 500;
 `;
 
 const QuarterContainer = styled.div`
@@ -18,12 +16,10 @@ const QuarterContainer = styled.div`
   flex-flow: column wrap;
   height: 205px;
   position: relative;
-  font-family: "DINPro-Light";
 `;
 
 const ActualDot = styled.div`
   display: flex;
-  background: ${(props) => props.color};
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -33,7 +29,6 @@ const ActualDot = styled.div`
 
 const EstimatedDot = styled.div`
   display: flex;
-  background: ${(props) => props.color};
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -55,10 +50,10 @@ const QuarterDots = (props) => {
   return (
     <div>
       <QuarterContainer>
-        <EstimatedDot spaceAboveDotHeight={spaceAboveDotHeightEstimated} id={props.earningsInfo.estimatedPrice} color={colors.lightGreen}></EstimatedDot>
-        <ActualDot spaceAboveDotHeight={spaceAboveDotHeightActual} id={props.earningsInfo.actualPrice} color={colors.darkGreen}></ActualDot>
+        <EstimatedDot spaceAboveDotHeight={spaceAboveDotHeightEstimated} id={props.earningsInfo.estimatedPrice} className="estimatedDotGlobalColor"></EstimatedDot>
+        <ActualDot spaceAboveDotHeight={spaceAboveDotHeightActual} id={props.earningsInfo.actualPrice} className="actualDotGlobalColor"></ActualDot>
       </QuarterContainer>
-      <XAxis color={colors.darkGray}>{`Q${moment(props.earningsInfo.quarter).format('Q YYYY')}`}</XAxis>
+      <XAxis className="axisGlobalColor">{`Q${moment(props.earningsInfo.quarter).format('Q YYYY')}`}</XAxis>
     </div>
   );
 };

@@ -11,7 +11,6 @@ const OuterContainer = styled.div`
 `;
 
 const EstimatedDot = styled.div`
-  background: ${(props) => props.color};
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -20,7 +19,6 @@ const EstimatedDot = styled.div`
 `;
 
 const ActualDot = styled.div`
-  background: ${(props) => props.color};
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -33,9 +31,9 @@ const Legend = (props) => {
 
   return (
     <OuterContainer>
-      <EstimatedDot color={colors.lightGreen}></EstimatedDot>
+      <EstimatedDot className="estimatedDotGlobalColor"></EstimatedDot>
       <div>Estimated <br></br> --- </div>
-      <ActualDot color={colors.darkGreen}></ActualDot>
+      <ActualDot className="actualDotGlobalColor"></ActualDot>
       <div>Actual <br></br> Expected Jan 28, After Hours</div>
     </OuterContainer>
 
